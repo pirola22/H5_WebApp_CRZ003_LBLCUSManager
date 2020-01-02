@@ -3,7 +3,7 @@ module h5.application {
     class App extends M3.ApplicationBase {
         public onStart() {
             this.name = "Label Type Manager";
-            this.description = "This will manage the Label Types.";
+            this.description = "This stand alone web application will manage the Label Types.";
             this.addUrlOverride("M3", "172.16.129.13", "http://172.16.129.13:8485");
             this.frameworkPath = "lib/odin";
             this.languageOptions = {
