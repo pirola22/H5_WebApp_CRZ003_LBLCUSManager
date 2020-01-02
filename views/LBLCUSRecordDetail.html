@@ -1,0 +1,213 @@
+<form name="submitForm" novalidate>
+	<!-- Error Message -->
+	<div class="container-fluid">
+		<div class="alert alert-danger" role="alert" ng-if="hasMyError">
+			<span>{{error}}
+				<button type="button" class="close" ng-click="AppCtrl.hideMyError()">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</span> <span>
+				<ol>
+					<li ng-repeat="errorMessage in ::myErrorMessages">{{myError}}</li>
+				</ol>
+			</span>
+		</div>
+	</div>
+	<div class="modal-header">
+		<button type="button" class="close"
+			ng-click="AppCtrl.closeModalWindow()">&times;</button>
+		<h4 class="modal-title">{{::languageConstants.get('Label Type
+			Details' )}}</h4>
+		<tr input type="text" class="h5-input-xs" class="h5-color-graphite">
+			<h5>{{::languageConstants.get('Format')}}</h5>
+			<input type="text" class="h5-input-xs"
+				ng-model="LBLCUSModule.LBLCUSRecord.PK02" name="PK02" title="Format"
+				style="text-align: right" readonly>
+		</tr>
+		<button type="submit" class="h5Button {{theme.button}}"
+			ng-click="AppCtrl.saveLBLCUSRecord()">{{::languageConstants.get('Save')}}</button>
+		<button class="h5Button {{theme.button}}"
+			ng-click="AppCtrl.displayDialog()">{{::languageConstants.get('Delete')}}</button>
+				<button class="h5Button {{theme.button}}"
+				ng-click="AppCtrl.closeModalWindow()">{{::languageConstants.get('Cancel')}}</button>
+			
+			
+			
+
+
+	</div>
+	<div class="modal-body">
+
+
+		<div class="panel {{theme.panel}}">
+			<div class="table-responsive h5-padding-md">
+				<div style="clear: both">
+					<div class="table-responsive h5-padding-md">
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<table class="inlineTable">
+									<tr>
+										<td>
+											<table class="inlineTable">
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Record ID')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-sm"
+														ng-model="LBLCUSModule.rcid" name="AL30"
+														title="Description" style="text-align: left" readonly></td>
+													<!-- <td><select
+													(change)="filterForeCasts($event.target.value)"
+													ng-model="LBLCUSModule.LBLCUSRecord.PK01" name="PK01"
+													class="h5-input-xs" readonly>
+														<option value="1">--Internal--</option>
+														<option value="2">--Customer--</option>
+														<option value="3">--Origin--</option>
+														<option value="4">--Expiry--</option>
+												</select></td>
+												-->
+
+												</tr>
+												<tr>
+
+												</tr>
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Mode')}}</h5></td>
+													<td>:</td>
+													<td><input type="text" class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.PK03" name="PK03"
+														title="Mode" style="text-align: right" readonly ></td>
+
+												</tr>
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Description')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-sm"
+														ng-model="LBLCUSModule.LBLCUSRecord.AL30" name="AL30"
+														title="Description" style="text-align: left" autofocus></td>
+												</tr>
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Qty Qual')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.AL31" name="AL31"
+														title="Qty Qual" style="text-align: left"
+														oninput="this.value = this.value.toUpperCase()"></td>
+												</tr>
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Lot Qual')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.AL32" name="AL32"
+														title="Lot Qual" style="text-align: left"
+														oninput="this.value = this.value.toUpperCase()"></td>
+												</tr>
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Serial
+															Qual')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.AL33" name="AL33"
+														title="Serial Qual" style="text-align: left"
+														oninput="this.value = this.value.toUpperCase()"></td>
+												</tr>
+												<tr>
+													<td><h5>{{::languageConstants.get('Create SFX')}}</h5></td>
+													<td>:</td>
+													<td><input name="lastBox" type="checkbox"
+														class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.N096" name="N096"
+														title="Create SFX" style="text-align: right"></td>
+												</tr>
+												<tr>
+													<td><h5>{{::languageConstants.get('Cust PO
+															Required')}}</h5></td>
+													<td>:</td>
+													<td><input name="lastBox" type="checkbox"
+														class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.N196" name="N196"
+														title="Cust PO Required" style="text-align: right"></td>
+												</tr>
+
+
+											</table>
+										</td>
+										<td>
+											<table class="inlineTable">
+
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Cust PO
+															Qual')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.AL34" name="AL34"
+														title="Cust PO Qual" style="text-align: left"
+														oninput="this.value = this.value.toUpperCase()"></td>
+												</tr>
+												<tr input type="text" class="h5-input-xs"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Cust Part
+															Qual')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.AL35" name="AL35"
+														title="Cust Part Qual" style="text-align: left"
+														oninput="this.value = this.value.toUpperCase()"></td>
+												</tr>
+												<tr input type="text" class="h5-input-sm"
+													class="h5-color-graphite">
+													<td><h5>{{::languageConstants.get('Label Size')}}</h5></td>
+													<td>:</td>
+													<td><input type="TEXT" class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.AL36" name="AL36"
+														title="Label Size" style="text-align: left"></td>
+												</tr>
+												<tr>
+													<td><h5>{{::languageConstants.get('Serial
+															Number')}}</h5></td>
+													<td>:</td>
+													<td><input name="Serial Number" type="number"
+														class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.N296" name="N296"
+														title="Serial Number"
+														onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+														style="text-align: right" required></td>
+												</tr>
+												<tr>
+													<td><h5>{{::languageConstants.get('GHS Label')}}</h5></td>
+													<td>:</td>
+													<td><input name="lastBox" type="checkbox"
+														class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.N396" name="N396"
+														title="GHS Label" style="text-align: right"></td>
+												</tr>
+
+												<tr>
+													<td><h5>{{::languageConstants.get('Alternate
+															Project #')}}</h5></td>
+													<td>:</td>
+													<td><input name="Alternate Project #" type="number"
+														class="h5-input-xs"
+														ng-model="LBLCUSModule.LBLCUSRecord.N496" name="N496"
+														title="Alternate Project #"
+														onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+														style="text-align: right" required></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
